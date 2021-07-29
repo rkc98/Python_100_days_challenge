@@ -65,14 +65,15 @@ def process_coins(choice):
 
     total = (quaters*0.25)+(dimes*0.10)+(nickel*0.05)+(pennies*0.01)
     if total > MENU[choice]["cost"]:
-        return round(total-MENU[choice]["cost"],2)
+        return round(total-MENU[choice]["cost"], 2)
     else:
         return None
 
 
 def make_a_coffe(choice):
     for items in MENU[choice]["ingredients"]:
-        report_list[items] = report_list[items] - MENU[choice]["ingredients"][items]
+        report_list[items] = report_list[items] - \
+            MENU[choice]["ingredients"][items]
     report_list["money"] += MENU[choice]["cost"]
 
 
@@ -89,6 +90,8 @@ while game_start:
             if funds != None:
                 make_a_coffe(user_input)
                 print(f"here is your {user_input} please enjoy!!!!")
+                print(f"here is you left over change: {funds}")
+
             else:
                 print("insufficient money")
                 break
@@ -102,6 +105,8 @@ while game_start:
             if funds != None:
                 make_a_coffe(user_input)
                 print(f"here is your {user_input} please enjoy!!!!")
+                print(f"here is you left over change: {funds}")
+
             else:
                 print("insufficient money")
                 break
