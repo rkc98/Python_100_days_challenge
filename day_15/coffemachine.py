@@ -72,8 +72,7 @@ def process_coins(choice):
 
 def make_a_coffe(choice):
     for items in MENU[choice]["ingredients"]:
-        report_list[items] = report_list[items] - \
-            MENU[choice]["ingredients"][items]
+        report_list[items] = report_list[items] - MENU[choice]["ingredients"][items]
     report_list["money"] += MENU[choice]["cost"]
 
 
